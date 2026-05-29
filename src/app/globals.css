@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #fcfbf9;
+    color: #1e293b;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+
+  :focus-visible {
+    outline: 2px solid #f59e0b;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Playfair Display', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+
+  /* Custom icon sizes not in Tailwind default scale */
+  .h-4\.5 { height: 1.125rem; }
+  .w-4\.5 { width: 1.125rem; }
+  .h-3\.5 { height: 0.875rem; }
+  .w-3\.5 { width: 0.875rem; }
+
+  /* Thin scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #e2e8f0 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { height: 4px; width: 4px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #e2e8f0;
+    border-radius: 20px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background-color: #cbd5e1; }
+}
+
+::selection {
+  background-color: #fef3c7;
+  color: #92400e;
+}
