@@ -116,7 +116,7 @@ export default function CategorySection({ group, onSubcategoryClick }) {
       {/* Scrollable row */}
       <div
         ref={scrollRef}
-        className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin"
+        className="flex gap-3 overflow-x-auto pt-4 pb-6 -mt-4 px-1 -mx-1 scrollbar-thin"
       >
         {group.subcategories.map((sub) => (
           <SubcategoryCard
