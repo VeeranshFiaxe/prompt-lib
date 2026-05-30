@@ -2,13 +2,13 @@ import './globals.css';
 import { FavoritesProvider } from '@/context/FavoritesContext';
 
 export const metadata = {
-  title: 'AI Prompt Library for Life Insurance Advisors · AdvisorAI',
+  title: 'AI Prompt Library for Life Insurance Advisors · Fiaxe',
   description:
     'Ready-to-use AI prompts for insurance professionals. Copy, paste into Claude or ChatGPT, and get polished results in seconds. Powered by the PET Framework.',
   keywords: [
     'AI prompts',
     'insurance',
-    'advisor',
+    'Fiaxe',
     'pre-underwriting',
     'prompt library',
     'ChatGPT',
@@ -16,9 +16,9 @@ export const metadata = {
     'PET framework',
     'business communication',
   ],
-  authors: [{ name: 'AdvisorAI Team' }],
+  authors: [{ name: 'Fiaxe Team' }],
   openGraph: {
-    title: 'AI Prompt Library for Life Insurance Advisors · AdvisorAI',
+    title: 'AI Prompt Library for Life Insurance Advisors · Fiaxe',
     description:
       'Ready-to-use AI prompts for insurance professionals. Copy, paste, and get things done.',
     type: 'website',

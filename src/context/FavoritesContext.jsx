@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 
 const FavoritesContext = createContext(null);
 
-const STORAGE_KEY = 'advisor-prompt-favorites';
+const STORAGE_KEY = 'fiaxe-prompt-favorites';
 
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);

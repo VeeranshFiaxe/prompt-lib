@@ -1,5 +1,5 @@
 // ============================================================
-// AdvisorAI - Professional AI Prompt Library
+// Fiaxe - Professional AI Prompt Library
 // 71 Prompts across 15 Categories (PET Framework)
 // ============================================================
 

@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="mb-8 inline-flex items-center justify-center rounded-full border border-amber-200/60 bg-amber-50/50 px-4 py-1.5 shadow-sm ring-1 ring-amber-100/50">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mr-2 shadow-sm" />
           <span className="text-[10px] font-bold tracking-[0.2em] text-amber-700 uppercase">
-            AdvisorAI · Professional AI Toolkit
+            Fiaxe · Professional AI Toolkit
           </span>
         </div>
 

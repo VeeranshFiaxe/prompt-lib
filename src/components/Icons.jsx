@@ -6,6 +6,23 @@
 
 const base = 'flex-shrink-0';
 
+export function IconFiaxe({ className = 'w-6 h-6' }) {
+  return (
+    <svg className={`${base} ${className}`} fill="none" viewBox="0 0 24 24" stroke="none">
+      {/* Top Segment */}
+      <path 
+        fill="currentColor" 
+        d="M 6.2,3 L 23,3 L 21.5,7.5 L 9,7.5 L 4,12.5 L 1.2,9.7 Z" 
+      />
+      {/* Bottom Segment */}
+      <path 
+        fill="currentColor" 
+        d="M 10.2,11 L 19,11 L 17.5,15.5 L 13,15.5 L 8,20.5 L 5.2,17.7 Z" 
+      />
+    </svg>
+  );
+}
+
 // ── Generic primitives ──────────────────────────────────────────────────────
 
 export function IconEnvelope({ className = 'w-5 h-5' }) {
