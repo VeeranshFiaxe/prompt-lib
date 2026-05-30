@@ -2,22 +2,23 @@ import './globals.css';
 import { FavoritesProvider } from '@/context/FavoritesContext';
 
 export const metadata = {
-  title: 'AI Prompt Library · Tata AIA Partner Office',
+  title: 'AI Prompt Library for Life Insurance Advisors · AdvisorAI',
   description:
     'Ready-to-use AI prompts for insurance professionals. Copy, paste into Claude or ChatGPT, and get polished results in seconds. Powered by the PET Framework.',
   keywords: [
     'AI prompts',
     'insurance',
-    'Tata AIA',
+    'advisor',
+    'pre-underwriting',
     'prompt library',
     'ChatGPT',
     'Claude',
     'PET framework',
     'business communication',
   ],
-  authors: [{ name: 'Tata AIA Partner Office' }],
+  authors: [{ name: 'AdvisorAI Team' }],
   openGraph: {
-    title: 'AI Prompt Library · Tata AIA Partner Office',
+    title: 'AI Prompt Library for Life Insurance Advisors · AdvisorAI',
     description:
       'Ready-to-use AI prompts for insurance professionals. Copy, paste, and get things done.',
     type: 'website',

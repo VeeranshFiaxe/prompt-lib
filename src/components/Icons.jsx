@@ -177,29 +177,40 @@ export function IconBolt({ className = 'w-5 h-5' }) {
   );
 }
 
+export function IconShieldCheck({ className = 'w-5 h-5' }) {
+  return (
+    <svg className={`${base} ${className}`} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>
+  );
+}
+
 // ── Icon mapping by subcategory ID ──────────────────────────────────────────
 
 const SUBCATEGORY_ICON_MAP = {
-  'email-writing':          IconEnvelope,
-  'linkedin-content':       IconNetwork,
-  'sales-client':           IconHandshake,
-  'meeting-support':        IconCalendar,
-  'work-summaries':         IconDocumentChart,
-  'productivity-planning':  IconTarget,
-  'training-learning':      IconAcademicCap,
-  'document-support':       IconPencilSquare,
-  'confidence-tone':        IconMicrophone,
-  'content-repurposing':    IconArrowsRotate,
-  'insurance-communication': IconBuilding,
-  'workplace-assistant':    IconCpuChip,
-  'report-summarization':   IconTableCells,
-  'trend-comparison':       IconChartLine,
-  'insights-actions':       IconLightbulb,
-  'data-troubleshooting':   IconWrench,
+  'email-writing':                IconEnvelope,
+  'linkedin-content':             IconNetwork,
+  'sales-client':                 IconHandshake,
+  'pre-underwriting-eligibility': IconShieldCheck,
+  'pre-underwriting-guidance':    IconLightbulb,
+  'meeting-support':              IconCalendar,
+  'work-summaries':               IconDocumentChart,
+  'productivity-planning':        IconTarget,
+  'training-learning':            IconAcademicCap,
+  'document-support':             IconPencilSquare,
+  'confidence-tone':              IconMicrophone,
+  'content-repurposing':          IconArrowsRotate,
+  'insurance-communication':      IconBuilding,
+  'workplace-assistant':          IconCpuChip,
+  'report-summarization':         IconTableCells,
+  'trend-comparison':             IconChartLine,
+  'insights-actions':             IconLightbulb,
+  'data-troubleshooting':         IconWrench,
 };
 
 const GROUP_ICON_MAP = {
   'Core Communication':       IconChatBubble,
+  'Pre-Underwriting':         IconShieldCheck,
   'Office Productivity':      IconClipboard,
   'Professional Growth':      IconTrendingUp,
   'Smart AI Utilities':       IconBolt,

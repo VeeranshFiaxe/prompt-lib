@@ -33,6 +33,12 @@ const CARD_THEMES = {
     pill: 'bg-teal-50 text-teal-600',
     arrowHover: 'group-hover:text-teal-500',
   },
+  emerald: {
+    iconBg: 'bg-emerald-50 text-emerald-500',
+    iconHover: 'group-hover:bg-emerald-100 group-hover:text-emerald-600',
+    pill: 'bg-emerald-50 text-emerald-600',
+    arrowHover: 'group-hover:text-emerald-500',
+  },
 };
 
 export default function SubcategoryCard({ subcategory, theme, onClick }) {

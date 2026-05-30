@@ -7,7 +7,7 @@ const FAQ_ITEMS = [
   {
     question: 'What is this Prompt Library?',
     answer:
-      'A curated collection of ready-to-use AI prompts for Tata AIA partner office professionals. Instead of figuring out what to ask the AI, you copy a prompt, paste it into ChatGPT or Claude, and get a polished output in seconds.',
+      'A curated collection of ready-to-use AI prompts for life insurance advisors and professionals. Instead of figuring out what to ask the AI, you copy a prompt, paste it into ChatGPT or Claude, and get a polished output in seconds.',
   },
   {
     question: 'What is the PET Framework?',

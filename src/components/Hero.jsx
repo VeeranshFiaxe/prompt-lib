@@ -1,5 +1,7 @@
 'use client';
 
+import { allPrompts } from '@/data/prompts';
+
 export default function Hero() {
   const handleScrollToCategories = () => {
     document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });
@@ -12,7 +14,7 @@ export default function Hero() {
         <div className="mb-8 inline-flex items-center justify-center rounded-full border border-amber-200/60 bg-amber-50/50 px-4 py-1.5 shadow-sm ring-1 ring-amber-100/50">
           <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mr-2 shadow-sm" />
           <span className="text-[10px] font-bold tracking-[0.2em] text-amber-700 uppercase">
-            Tata AIA · AI Toolkit For Leaders
+            AdvisorAI · Professional AI Toolkit
           </span>
         </div>
 
@@ -24,7 +26,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="mt-6 text-base text-slate-500 leading-relaxed max-w-lg mx-auto">
-          61 ready-to-use prompts for insurance professionals. Copy, paste into Claude or ChatGPT, and get polished professional output in seconds.
+          {allPrompts.length} ready-to-use prompts for insurance professionals. Copy, paste into Claude or ChatGPT, and get polished professional output in seconds.
         </p>
 
         {/* CTAs */}
