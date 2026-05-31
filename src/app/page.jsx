@@ -45,7 +45,7 @@ export default function HomePage() {
   const isSearching = searchQuery.trim().length > 0;
 
   return (
-    <main className="min-h-screen bg-[#fcfbf9]">
+    <main className="min-h-screen bg-[#fcfbf9] overflow-x-hidden w-full max-w-full">
       <TopNav searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       
       <Hero />

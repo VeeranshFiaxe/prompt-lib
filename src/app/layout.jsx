@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#fcfbf9] antialiased">
+      <body className="min-h-screen bg-[#fcfbf9] antialiased overflow-x-hidden w-full max-w-full">
         <FavoritesProvider>{children}</FavoritesProvider>
       </body>
     </html>
