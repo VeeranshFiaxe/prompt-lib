@@ -15,7 +15,7 @@ export default function TopNav({ searchQuery, setSearchQuery }) {
           <span className="font-sans text-lg font-extrabold tracking-tight text-slate-800">
             Fiaxe
           </span>
-          <span className="font-sans text-xs font-normal text-slate-400 pl-2 border-l border-slate-200 ml-1">
+          <span className="font-sans text-xs font-normal text-slate-400 pl-2 border-l border-slate-200 ml-1 hidden sm:inline">
             Prompt Library
           </span>
         </div>

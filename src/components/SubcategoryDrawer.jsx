@@ -50,11 +50,13 @@ export default function SubcategoryDrawer({ subcategory, prompts = [], isOpen, o
             Back
           </button>
 
-          <div className="flex items-center gap-2">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-50 text-amber-600 shadow-sm ring-1 ring-amber-100">
+          <div className="flex items-center gap-2 max-w-[50%] min-w-0">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-50 text-amber-600 shadow-sm ring-1 ring-amber-100 flex-shrink-0">
               <SubcategoryIcon id={subcategory?.id} className="w-4 h-4" />
             </span>
-            <h2 className="text-sm font-bold text-slate-800">{subcategory?.name}</h2>
+            <h2 className="text-sm font-bold text-slate-800 truncate" title={subcategory?.name}>
+              {subcategory?.name}
+            </h2>
           </div>
 
           <button

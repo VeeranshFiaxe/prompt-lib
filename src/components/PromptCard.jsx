@@ -83,76 +83,76 @@ export default function PromptCard({ prompt }) {
         isExpanded ? 'bg-amber-400' : 'bg-transparent group-hover:bg-slate-200'
       }`} />
 
-      {/* Top bar: title + actions */}
-      <div className="flex items-start justify-between gap-4 pl-6 pr-5 pt-5 pb-3">
+      {/* Top bar: title + save action */}
+      <div className="flex items-start justify-between gap-4 pl-6 pr-5 pt-5 pb-2">
         <h3 className={`text-base font-bold leading-snug transition-colors duration-300 ${
           isExpanded ? 'text-amber-900' : 'text-slate-800'
         }`}>
           {prompt.title}
         </h3>
 
-        {/* Action buttons */}
-        <div className="flex items-center gap-1.5 flex-shrink-0">
-          {/* Use in ChatGPT */}
-          <button
-            onClick={handleChatGPT}
-            className="group hidden sm:flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 active:scale-95"
-          >
-            <Image src="/chatgpt-logo.png" alt="ChatGPT" width={14} height={14} className="opacity-70 group-hover:opacity-100" />
-            Use in ChatGPT
-          </button>
-
-          {/* Use in Claude */}
-          <button
-            onClick={handleClaude}
-            className={`group hidden sm:flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all duration-200 active:scale-95 ${
-              claudeCopied
-                ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
-                : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300'
-            }`}
-          >
-            <Image src="/claude-logo.png" alt="Claude" width={14} height={14} className="opacity-70 group-hover:opacity-100" />
-            {claudeCopied ? 'Copied! Opening...' : 'Use in Claude'}
-          </button>
-
-          {/* Copy Prompt */}
-          <button
-            onClick={handleCopy}
-            title={copied ? 'Copied' : 'Copy prompt'}
-            className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all duration-200 active:scale-95 ${
-              copied
-                ? 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200'
-                : 'bg-gradient-to-b from-amber-50 to-orange-50 text-amber-700 ring-1 ring-amber-200/70 hover:from-amber-100 hover:to-orange-100 hover:shadow-sm'
-            }`}
-          >
-            {copied ? (
-              <IconCheck className="w-3.5 h-3.5" />
-            ) : (
-              <IconCopy className="w-3.5 h-3.5" />
-            )}
-            {copied ? 'Copied' : 'Copy'}
-          </button>
-
-          <button
-            onClick={() => toggleFavorite(prompt.id)}
-            aria-label={liked ? 'Remove from saved' : 'Save prompt'}
-            className={`rounded-lg p-1.5 transition-colors hover:bg-slate-100 ${
-              liked
-                ? 'text-red-500 hover:text-red-600'
-                : 'text-slate-300 hover:text-red-400'
-            }`}
-          >
-            <IconHeart className="w-4 h-4" filled={liked} />
-          </button>
-        </div>
+        <button
+          onClick={() => toggleFavorite(prompt.id)}
+          aria-label={liked ? 'Remove from saved' : 'Save prompt'}
+          className={`rounded-lg p-1.5 transition-colors hover:bg-slate-100/80 flex-shrink-0 cursor-pointer ${
+            liked
+              ? 'text-red-500 hover:text-red-600'
+              : 'text-slate-300 hover:text-red-400'
+          }`}
+        >
+          <IconHeart className="w-4 h-4" filled={liked} />
+        </button>
       </div>
 
       {/* Use-case line */}
       {prompt.useCase && (
-        <p className="pl-6 pr-5 pb-4 text-sm leading-relaxed text-slate-500">
+        <p className="pl-6 pr-5 pb-3 text-sm leading-relaxed text-slate-500">
           {prompt.useCase}
         </p>
       )}
+
+      {/* Workflow action buttons */}
+      <div className="flex flex-wrap items-center gap-2 pl-6 pr-5 pb-4">
+        {/* Use in ChatGPT */}
+        <button
+          onClick={handleChatGPT}
+          className="group flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-bold text-slate-700 transition-all duration-200 hover:bg-slate-50 hover:border-slate-300 active:scale-95 cursor-pointer"
+        >
+          <Image src="/chatgpt-logo.png" alt="ChatGPT" width={14} height={14} className="opacity-70 group-hover:opacity-100" />
+          Use in ChatGPT
+        </button>
+
+        {/* Use in Claude */}
+        <button
+          onClick={handleClaude}
+          className={`group flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer ${
+            claudeCopied
+              ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+              : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300'
+          }`}
+        >
+          <Image src="/claude-logo.png" alt="Claude" width={14} height={14} className="opacity-70 group-hover:opacity-100" />
+          {claudeCopied ? 'Copied! Opening...' : 'Use in Claude'}
+        </button>
+
+        {/* Copy Prompt */}
+        <button
+          onClick={handleCopy}
+          title={copied ? 'Copied' : 'Copy prompt'}
+          className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all duration-200 active:scale-95 cursor-pointer ${
+            copied
+              ? 'bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200'
+              : 'bg-gradient-to-b from-amber-50 to-orange-50 text-amber-700 ring-1 ring-amber-200/70 hover:from-amber-100 hover:to-orange-100 hover:shadow-sm'
+          }`}
+        >
+          {copied ? (
+            <IconCheck className="w-3.5 h-3.5" />
+          ) : (
+            <IconCopy className="w-3.5 h-3.5" />
+          )}
+          {copied ? 'Copied' : 'Copy'}
+        </button>
+      </div>
 
       {/* View / hide toggle */}
       <div className={`border-t px-6 transition-colors duration-300 ${

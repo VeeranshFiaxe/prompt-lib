@@ -32,6 +32,11 @@ const THEME_CLASSES = {
     pillText: 'text-teal-600',
     pillBorder: 'border-teal-100',
   },
+  emerald: {
+    line: 'bg-emerald-500',
+    pillText: 'text-emerald-600',
+    pillBorder: 'border-emerald-100',
+  },
 };
 
 export default function CategorySection({ group, onSubcategoryClick }) {
