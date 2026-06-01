@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
 import { useFavorites } from '../context/FavoritesContext';
 import { categoryGroups, allPrompts } from '../data/prompts';
@@ -11,7 +11,6 @@ const subcategoryNameMap = {};
 categoryGroups.forEach((g) =>
   g.subcategories.forEach((s) => { subcategoryNameMap[s.id] = s.name; })
 );
-
 
 function FavoriteCard({ prompt, onRemove, onClick }) {
   const [copied, setCopied] = useState(false);
@@ -73,6 +72,21 @@ export default function FavoritesRow() {
   const [selectedPrompt, setSelectedPrompt] = useState(null);
   const favoritePrompts = allPrompts.filter((p) => favorites.includes(p.id));
 
+  // Lock body scroll while modal is active
+  useEffect(() => {
+    document.body.style.overflow = selectedPrompt ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedPrompt]);
+
+  // Close modal on Escape
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') setSelectedPrompt(null);
+    };
+    if (selectedPrompt) window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
+  }, [selectedPrompt]);
+
   // Auto-close modal if active prompt is removed from favorites
   const handleRemove = (id) => {
     toggleFavorite(id);
@@ -115,17 +129,29 @@ export default function FavoritesRow() {
 
           {/* Modal Centering block */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
-            <div className="relative w-full max-w-xl mx-auto bg-white p-1.5 rounded-2xl shadow-2xl border border-slate-200/80 ring-1 ring-black/5 pointer-events-auto transition-transform duration-300 scale-100">
-              {/* Close Button above card */}
-              <button
-                onClick={() => setSelectedPrompt(null)}
-                className="absolute -top-11 right-0 flex items-center gap-1 rounded-full bg-slate-800/80 backdrop-blur-sm text-white px-3 py-1.5 text-xs font-bold hover:bg-slate-700/80 transition-colors cursor-pointer"
-              >
-                <IconX className="w-3.5 h-3.5" />
-                Close
-              </button>
-              
-              <PromptCard prompt={selectedPrompt} />
+            <div className="relative flex flex-col w-full max-w-xl mx-auto bg-slate-50 rounded-2xl shadow-2xl border border-slate-200/80 ring-1 ring-black/5 pointer-events-auto transition-all duration-300 scale-100 max-h-[85vh] sm:max-h-[90vh] overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center justify-between border-b border-slate-200/60 bg-white px-5 py-3 rounded-t-2xl shadow-sm z-10 flex-shrink-0">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-50 text-amber-600 shadow-sm ring-1 ring-amber-100">
+                    ❤️
+                  </span>
+                  <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500">Saved Prompt</span>
+                </div>
+                <button
+                  onClick={() => setSelectedPrompt(null)}
+                  aria-label="Close"
+                  className="flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors cursor-pointer"
+                >
+                  <IconX className="w-3.5 h-3.5" />
+                  Close
+                </button>
+              </div>
+
+              {/* Scrollable content body */}
+              <div className="flex-1 overflow-y-auto p-4 scrollbar-thin">
+                <PromptCard prompt={selectedPrompt} />
+              </div>
             </div>
           </div>
         </>
